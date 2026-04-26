@@ -7,20 +7,26 @@ sleep 1
 
 
 ## Asking Stuff
-echo "Your AUR helped(e.g. paru or yay ): "
+echo "Your AUR helper(e.g. paru or yay ): "
 read -r aur
 echo "Your init system(e.g. systemd or openrc or dinit etc.):" 
 read -r init
 
 sleep 0.5
 echo "Installing deps"
-$aur -S niri-$init-git noctalia-shell-git
+$aur -S niri-$init-git noctalia-shell-git kitty
 
 sleep 1
 echo "Adding configs to ~/.config directory"
+
+mv ~/.config/niri/ ~/.config/niri.bak/
+mv ~/.config/noctalia ~/.config/noctalia.bak
 
 cp $SCRIPT_DIR/niri ~/.config/niri -r
 cp $SCRIPT_DIR/noctalia ~/.config/noctalia -r
 
 echo "Adding wallpapers"
-cp $SCRIPT_DIR/Pictures ~/Pictures
+cp $SCRIPT_DIR/Pictures/* ~/Pictures
+
+
+echo "LAUNCH NIRI FOR THE FIRST TIME WITH 'niri' NOT WITH 'niri-session', AFTER THAT USE 'niri-session'"
