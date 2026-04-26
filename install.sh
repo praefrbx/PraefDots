@@ -21,3 +21,6 @@ echo "Adding configs to ~/.config directory"
 
 cp $SCRIPT_DIR/niri ~/.config/niri -r
 cp $SCRIPT_DIR/noctalia ~/.config/noctalia -r
+
+echo "Adding wallpapers"
+cp $SCRIPT_DIR/Pictures ~/Pictures
