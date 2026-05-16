@@ -9,12 +9,15 @@ sleep 1
 ## Asking Stuff
 echo "Your AUR helper(e.g. paru or yay ): "
 read -r aur
-echo "Your init system(e.g. systemd or openrc or dinit etc.):" 
+echo "Do you use dinit?" 
 read -r init
 
 sleep 0.5
 echo "Installing deps"
-$aur -S niri-$init-git noctalia-shell-git kitty
+if [ $init == y ]; do
+    $aur -S niri-dinit-git noctalia-qs-git noctalia-shell-git kitty
+else $aur -S niri-git noctalia-qs-git noctalia-shell-git kitty
+done
 
 sleep 1
 echo "Adding configs to ~/.config directory"
@@ -26,6 +29,8 @@ cp $SCRIPT_DIR/niri ~/.config/niri -r
 cp $SCRIPT_DIR/noctalia ~/.config/noctalia -r
 
 echo "Adding wallpapers"
+cp -r $SCRIPT_DIR/Pictures/ ~/Pictures
+
 cp $SCRIPT_DIR/Pictures/* ~/Pictures
 
 
