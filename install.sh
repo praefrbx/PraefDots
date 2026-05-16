@@ -14,10 +14,12 @@ read -r init
 
 sleep 0.5
 echo "Installing deps"
-if [ $init == y ]; do
+
+if [ "$init" == "y" ]; then
     $aur -S niri-dinit-git noctalia-qs-git noctalia-shell-git kitty
-else $aur -S niri-git noctalia-qs-git noctalia-shell-git kitty
-done
+else
+    $aur -S niri-git noctalia-qs-git noctalia-shell-git kitty
+fi
 
 sleep 1
 echo "Adding configs to ~/.config directory"
