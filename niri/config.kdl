@@ -614,14 +614,36 @@ include "./noctalia.kdl"
 
 
 blur {
-    saturation 1.2
     passes 3
-    noise 0
     offset 3
+    noise 0
+    saturation 1.2
 }
 
-environment
+environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORM "wayland"
+    QT_STYLE_OVERRIDE "kvantum"
+}
+
+layer-rule {
+  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
 cursor {
     xcursor-size 24
 }
 include "./animations/chromatic_edge.kdl"
+
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+    draw-border-with-background false
+    background-effect {
+        xray false
+    }
+}

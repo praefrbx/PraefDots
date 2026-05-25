@@ -1,0 +1,28 @@
+{
+  "activeBackend": "qt6-multimedia",
+  "automationMode": "random",
+  "automationTime": 300,
+  "fillMode": "fit",
+  "mpvSocket": "/tmp/mpv-socket",
+  "profile": "default",
+  "volume": 1,
+  "wallpapersFolder": "/home/praef/Pictures",
+  "thumbCacheReady": true,
+  "enabled": true,
+  "monitorSpecific": false,
+  "eDP-2": {
+    "currentWallpaper": "/home/praef/Pictures/Project 2 [DA6DEBF].mp4",
+    "volume": 1,
+    "automation": false,
+    "automationMode": "random",
+    "automationTime": 300,
+    "hardwareAcceleration": false,
+    "profile": "default",
+    "fillMode": "",
+    "orientation": 0,
+    "noctaliaWallpaper": "/home/praef/Pictures/fd3de03d7ecda9a2ef935e0ff7f29d11.jpg",
+    "isPlaying": true,
+    "isMuted": true
+  },
+  "automationCustomTime": []
+}
