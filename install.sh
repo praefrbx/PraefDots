@@ -16,7 +16,7 @@ read -r su
 sleep 0.5
 echo "Installing deps"
 
-case "${init,,}" in # ,, приводит строку к нижнему регистру (Y -> y)
+case "${init,,}" in
 y | yes)
   echo "Configuring for dinit(Maintained by developer(sometimes))..."
   $aur -S niri-dinit-git noctalia-qs-git noctalia-shell-git \
@@ -39,8 +39,6 @@ y | yes)
   ;;
 esac
 
-# ... (твой предыдущий код с установкой пакетов и выбором case) ...
-
 echo "Apply config for kitty?[y/n]"
 read -r kittyconf
 echo "Apply zsh as a shell?[y/n]"
@@ -49,20 +47,16 @@ read -r zsh
 sleep 1
 echo "Adding configs to ~/.config directory"
 
-# Системный глобальный конфиг niri (как в твоем наброске)
 $su mkdir -p /etc/niri
 $su touch /etc/niri/config.kdl
 
-# Безопасный бэкап старых конфигов (только если они существуют)
 [ -d ~/.config/niri ] && mv ~/.config/niri/ ~/.config/niri.bak/
 [ -d ~/.config/noctalia ] && mv ~/.config/noctalia/ ~/.config/noctalia.bak/
 
-# Копирование основных конфигов из папки скрипта
 mkdir -p ~/.config
 cp -r "$SCRIPT_DIR/niri" ~/.config/
 cp -r "$SCRIPT_DIR/noctalia" ~/.config/
 
-# --- Реализация логики для Kitty ---
 case "${kittyconf,,}" in
 y | yes)
   echo "Applying Kitty configuration..."
@@ -78,7 +72,7 @@ y | yes)
   ;;
 esac
 
-# --- Реализация логики для ZSH и копирования твоего OMZ ---
+
 case "${zsh,,}" in
 y | yes)
   echo "Setting ZSH as default shell..."
