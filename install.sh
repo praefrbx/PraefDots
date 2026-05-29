@@ -22,7 +22,7 @@ y | yes)
   $aur -S niri-dinit-git noctalia-qs-git noctalia-shell-git \
     kitty brightnessctl polkit-gnome wl-clipboard xdg-desktop-portal-gnome \
     ttf-roboto inter-font ttf-jetbrains-mono-nerd xwayland-satellite \
-    pipewire pipewire-pulse wireplumber \
+    pipewire pipewire-pulse wireplumber zsh \
     seatd turnstile dbus \
     turnstile-dinit dbus-dinit seatd-dinit pipewire-dinit pipewire-pulse-dinit wireplumber-dinit --needed
 
@@ -35,7 +35,7 @@ y | yes)
   $aur -S niri-git noctalia-qs-git noctalia-shell-git \
     kitty brightnessctl polkit-gnome wl-clipboard xdg-desktop-portal-gnome \
     ttf-roboto inter-font ttf-jetbrains-mono-nerd xwayland-satellite \
-    pipewire pipewire-pulse wireplumber --needed
+    pipewire pipewire-pulse wireplumber zsh --needed
   ;;
 esac
 
