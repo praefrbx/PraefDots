@@ -72,7 +72,6 @@ y | yes)
   ;;
 esac
 
-
 case "${zsh,,}" in
 y | yes)
   echo "Setting ZSH as default shell..."
@@ -81,9 +80,9 @@ y | yes)
   [ -d ~/.oh-my-zsh ] && mv ~/.oh-my-zsh ~/.oh-my-zsh.bak
   [ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
 
-  if [ -d "$SCRIPT_DIR/.oh-my-zsh" ]; then
+  if [ -d "$SCRIPT_DIR/oh-my-zsh" ]; then
     echo "Copying your personal Oh My Zsh deployment..."
-    cp -r "$SCRIPT_DIR/.oh-my-zsh" ~/
+    cp -r "$SCRIPT_DIR/oh-my-zsh" ~/
   else
     echo "Warning: .oh-my-zsh directory not found in script folder!"
   fi
